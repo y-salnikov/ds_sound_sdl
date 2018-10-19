@@ -1,0 +1,24 @@
+compiler= i686-w64-mingw32-gcc
+cflags= -Os -pipe -Wall -march=native 
+includes=`i686-w64-mingw32-sdl2-config --cflags`
+libdir=`i686-w64-mingw32-sdl2-config --libs`
+link= -lm -lSDL2_mixer
+target=ds_sound_sdl
+
+source_files=$(wildcard *.c)
+object_files=$(patsubst %.c,%.o,$(source_files))
+
+$(target): $(object_files)
+	$(compiler) $(cflags) $^ $(libdir) $(link) -o $@
+
+%.o: %.c
+	$(compiler) $(cflags) $(includes)  -c $<
+	
+clean: 
+	rm -f $(target).exe
+	rm -f $(object_files)
+
+
+
+
+

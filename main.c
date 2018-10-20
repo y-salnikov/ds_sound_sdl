@@ -21,7 +21,7 @@ const int n_channels=4;
 int timer_dec=300;
 int filter_enabled=1;
 
-const double filter_ks[FORDER]={0.03,0.05,0.07,0.15,0.70};
+const double filter_ks[FORDER]={0.10,0.25,0.30,0.25,0.10}; 
 filter_type* left_filter;
 filter_type* right_filter;
 

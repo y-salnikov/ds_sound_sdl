@@ -1,8 +1,8 @@
 compiler= gcc
 cflags= -Os -pipe -Wall -march=native 
-includes=`sdl-config --cflags`
-libdir=`sdl-config --libs`
-link= -lm -lSDL_mixer
+includes=`sdl2-config --cflags`
+libdir=`sdl2-config --libs`
+link= -lm -lSDL2_mixer
 target=ds_sound_sdl
 
 source_files=$(wildcard *.c)
